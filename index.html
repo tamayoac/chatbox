@@ -3,12 +3,12 @@
 <head>
     <title>Simple Web Chatbox</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/controllers/ChatController.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/controllers/ChatController.js"></script>
 </head>
 <body ng-app="chatbox" ng-controller="ChatController as chat">
     <div>
-        <div id="messageList" style="height: 300px; overflow-y: scroll;">
+        <div id="messageList" style="height: 300px; overflow-y: scroll;" scroll-bottom="chat.messages">
             <div ng-repeat="message in chat.messages">
                 <b>{{ message.user }}:</b> {{ message.message }} <small>{{ message.timestamp }}</small>
             </div>
