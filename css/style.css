@@ -1,29 +1,3 @@
-/* Chat container */
-
-.other-message {
-    text-align: left;
-    background-color: #f1f0f0;
-}
-
-/* Messages from the current user */
-.my-message {
-    text-align: right;
-    background-color: #dcf8c6;
-}
-
-#messageList div {
-    display: block;
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 10px;
-    max-width: 70%;
-}
-
-/* Additional styling to ensure messages wrap and don't stretch the container width */
-#messageList div b, #messageList div small {
-    display: block;
-}
-
 #messageList {
     border: 1px solid #ccc;
     background-color: #f9f9f9;
@@ -34,26 +8,43 @@
     font-family: Arial, sans-serif;
 }
 
-/* Individual messages */
 #messageList div {
+    display: block;
+    padding: 5px 10px;
+    margin: 5px;
     margin-bottom: 10px;
-    padding: 5px;
+    border-radius: 10px;
+    max-width: 70%;
     border-bottom: 1px solid #eee;
 }
 
-/* Usernames */
-#messageList b {
-    color: #007bff;
-    margin-right: 5px;
+.other-message {
+    text-align: left;
+    background-color: #f1f0f0;
 }
 
-/* Timestamps */
+.my-message {
+    text-align: right;
+    background-color: #dcf8c6;
+}
+
+#messageList b, #messageList small {
+    display: block;
+}
+
+#messageList .my-message b {
+    color: #007bff;
+}
+
+#messageList .other-message b {
+    color: #333;
+}
+
 #messageList small {
     color: #666;
     font-size: 0.9em;
 }
 
-/* Input field */
 input[type="text"] {
     width: calc(100% - 90px);
     padding: 10px;
@@ -63,7 +54,6 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-/* Send button */
 button {
     width: 80px;
     padding: 10px;
@@ -78,7 +68,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Utility class for small screen adjustments */
 @media screen and (max-width: 600px) {
     input[type="text"], button {
         width: 100%;

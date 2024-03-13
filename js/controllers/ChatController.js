@@ -30,15 +30,24 @@ angular.module('chatbox', [])
                 vm.scrollToBottom(); // Scroll to the bottom
             }
         };
+        vm.timeAgo = function(isoDate) {
+            const now = new Date();
+            const messageDate = new Date(isoDate);
+            const diffInSeconds = Math.floor((now - messageDate) / 1000);
 
+            if (diffInSeconds < 60) return `${diffInSeconds} seconds ago`;
+            else if (diffInSeconds < 3600) return `${Math.floor(diffInSeconds / 60)} minutes ago`;
+            else if (diffInSeconds < 86400) return `${Math.floor(diffInSeconds / 3600)} hours ago`;
+            else return `${Math.floor(diffInSeconds / 86400)} days ago`;
+        };
         vm.scrollToBottom = function() {
             $timeout(function() {
                 var messageListElement = document.getElementById('messageList');
                 messageListElement.scrollTop = messageListElement.scrollHeight;
-            }, 0); // You can adjust the delay here as well
+            }, 0);
         };
         $timeout(vm.scrollToBottom, 0);
-        // Listen for messages from other tabs
+
         angular.element($window).on('storage', function(event) {
             if (event.key === 'chatMessages') {
                 vm.loadMessages();

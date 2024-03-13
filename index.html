@@ -9,9 +9,10 @@
 </head>
 <body ng-app="chatbox" ng-controller="ChatController as chat">
     <div>
-        <div id="messageList" style="height: 300px; overflow-y: scroll;">
+        <div id="messageList">
             <div ng-repeat="message in chat.messages" ng-class="{'my-message': message.user === chat.userName, 'other-message': message.user !== chat.userName}">
-                <b>{{ message.user }}:</b> {{ message.message }} <small>{{ message.timestamp }}</small>
+                <b>{{message.user === chat.userName ? 'You' : message.user}}:</b>
+                <span>{{message.message}}</span> <small>{{chat.timeAgo(message.timestamp)}}</small>
             </div>
         </div>
         <input type="text" ng-model="chat.message" ng-keypress="($event.which === 13) && chat.sendMessage()" placeholder="Type a message..." />
