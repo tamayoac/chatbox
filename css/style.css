@@ -1,0 +1,76 @@
+#messageList {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    height: 300px;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+}
+
+#messageList div {
+    display: block;
+    padding: 5px 10px;
+    margin: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    border-bottom: 1px solid #eee;
+}
+
+.other-message {
+    text-align: left;
+    background-color: #f1f0f0;
+}
+
+.my-message {
+    text-align: right;
+    background-color: #dcf8c6;
+}
+
+#messageList b, #messageList small {
+    display: block;
+}
+
+#messageList .my-message b {
+    color: #007bff;
+}
+
+#messageList .other-message b {
+    color: #333;
+}
+
+#messageList small {
+    color: #666;
+    font-size: 0.9em;
+}
+
+input[type="text"] {
+    width: calc(100% - 90px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 80px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 600px) {
+    input[type="text"], button {
+        width: 100%;
+        margin-top: 0;
+    }
+}
