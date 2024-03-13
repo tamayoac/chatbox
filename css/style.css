@@ -1,0 +1,87 @@
+/* Chat container */
+
+.other-message {
+    text-align: left;
+    background-color: #f1f0f0;
+}
+
+/* Messages from the current user */
+.my-message {
+    text-align: right;
+    background-color: #dcf8c6;
+}
+
+#messageList div {
+    display: block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+/* Additional styling to ensure messages wrap and don't stretch the container width */
+#messageList div b, #messageList div small {
+    display: block;
+}
+
+#messageList {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    height: 300px;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Individual messages */
+#messageList div {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Usernames */
+#messageList b {
+    color: #007bff;
+    margin-right: 5px;
+}
+
+/* Timestamps */
+#messageList small {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Input field */
+input[type="text"] {
+    width: calc(100% - 90px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Send button */
+button {
+    width: 80px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Utility class for small screen adjustments */
+@media screen and (max-width: 600px) {
+    input[type="text"], button {
+        width: 100%;
+        margin-top: 0;
+    }
+}
